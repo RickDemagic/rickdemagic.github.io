@@ -3,53 +3,84 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Analyse anfordern</title>
+<title>Kostenlose Website-Analyse</title>
+
 <style>
 body {
     font-family: Arial, sans-serif;
     background: #f4f6f8;
+    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
+    min-height: 100vh;
 }
+
 .box {
     background: white;
     padding: 40px;
-    border-radius: 8px;
+    border-radius: 10px;
     width: 100%;
-    max-width: 400px;
-    text-align: center;
+    max-width: 500px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
-input {
+
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+input, textarea {
     width: 100%;
-    padding: 12px;
+    padding: 14px;
     margin-bottom: 15px;
     border-radius: 6px;
     border: 1px solid #ccc;
+    font-size: 14px;
+    box-sizing: border-box;
 }
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
 button {
     width: 100%;
-    padding: 14px;
+    padding: 16px;
     background: #2e7d32;
     color: white;
     border: none;
     border-radius: 6px;
+    font-size: 16px;
     cursor: pointer;
+}
+
+button:hover {
+    background: #256628;
 }
 </style>
 </head>
+
 <body>
 
 <div class="box">
-<h2>Kostenlose Analyse sichern</h2>
+<h2>Kostenlose Website-Analyse anfordern</h2>
 
 <form action="https://formsubmit.co/rickdemagic@web.de" method="POST">
+
 <input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_subject" value="Neue Analyse-Anfrage über Website">
+<input type="hidden" name="_template" value="table">
+
 <input type="text" name="Name" placeholder="Ihr Name" required>
+
 <input type="email" name="Email" placeholder="Ihre E-Mail-Adresse" required>
-<button type="submit">Jetzt anfordern</button>
+
+<textarea name="Nachricht" placeholder="Website-URL und kurze Beschreibung Ihres Anliegens" required></textarea>
+
+<button type="submit">Analyse jetzt anfordern</button>
+
 </form>
 
 </div>
