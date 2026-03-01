@@ -18,7 +18,14 @@ body {
     line-height: 1.6;
 }
 
-/* HERO */
+.success {
+    background: #2e7d32;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    display: none;
+}
+
 .hero {
     height: 100vh;
     background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
@@ -63,7 +70,6 @@ body {
     color: black;
 }
 
-/* SECTIONS */
 section {
     padding: 80px 20px;
     text-align: center;
@@ -90,7 +96,6 @@ h2 {
     border-radius: 10px;
 }
 
-/* FORM */
 .form-section {
     background: #2e7d32;
     color: white;
@@ -128,7 +133,6 @@ button:hover {
     opacity: 0.9;
 }
 
-/* MOBILE */
 @media (min-width: 768px) {
     .features {
         grid-template-columns: repeat(3, 1fr);
@@ -143,7 +147,10 @@ button:hover {
 
 <body>
 
-<!-- HERO -->
+<div class="success" id="successMessage">
+Ihre Anfrage wurde erfolgreich gesendet. Ich melde mich zeitnah.
+</div>
+
 <div class="hero">
     <div class="hero-content">
         <small>MEHR DIREKTUMSATZ FÜR REGIONALE BETRIEBE</small>
@@ -152,7 +159,6 @@ button:hover {
     </div>
 </div>
 
-<!-- PROBLEM -->
 <section>
     <div class="container">
         <h2>Warum Ihre Website aktuell keine Kunden bringt</h2>
@@ -164,7 +170,6 @@ button:hover {
     </div>
 </section>
 
-<!-- LÖSUNG -->
 <section>
     <div class="container">
         <h2>Was ich konkret optimiere</h2>
@@ -176,21 +181,29 @@ button:hover {
     </div>
 </section>
 
-<!-- FORMULAR -->
 <section id="analyse" class="form-section">
     <div class="container">
         <h2>Kostenlose Website Analyse anfordern</h2>
 
-        <form action="https://rd.system.framework@gmail.com" method="POST">
+        <form action="https://formsubmit.co/rd.system.framework@gmail.com" method="POST">
             <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://rickdemagic.github.io/?success=true">
+
             <input type="text" name="Name" placeholder="Ihr Name" required>
             <input type="email" name="Email" placeholder="Ihre E-Mail-Adresse" required>
             <textarea name="Nachricht" placeholder="Website-URL und kurze Beschreibung" rows="4" required></textarea>
+
             <button type="submit">Jetzt Analyse anfordern</button>
         </form>
 
     </div>
 </section>
 
+<script>
+if (window.location.search.includes("success=true")) {
+    document.getElementById("successMessage").style.display = "block";
+}
+</script>
+
 </body>
-    </html>
+</html>
