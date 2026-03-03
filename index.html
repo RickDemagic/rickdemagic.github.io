@@ -3,190 +3,203 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RD Systems – Digitale Kundengewinnung</title>
+<title>RD Systems – Digitale Klarheit</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
 body{
 font-family:'Inter',sans-serif;
-background:#0f172a;
-color:#e2e8f0;
+background:#ffffff;
+color:#111111;
 line-height:1.6;
 scroll-behavior:smooth;
 }
 
-.navbar{
+/* NAV */
+.nav{
 position:fixed;
 width:100%;
-padding:20px 8%;
-background:rgba(15,23,42,0.85);
-backdrop-filter:blur(15px);
+padding:28px 8%;
+background:rgba(255,255,255,0.85);
+backdrop-filter:blur(20px);
+border-bottom:1px solid rgba(0,0,0,0.05);
 z-index:1000;
 }
-.nav-container{
+
+.nav-inner{
+max-width:1200px;
+margin:auto;
 display:flex;
 justify-content:space-between;
 align-items:center;
-max-width:1400px;
-margin:auto;
 }
-.logo{font-weight:800;font-size:20px;}
-.navbar a{
-color:#e2e8f0;
-text-decoration:none;
-margin-left:30px;
-font-weight:500;
-}
-.navbar a:hover{color:#22c55e;}
 
+.logo{
+font-weight:600;
+letter-spacing:-0.5px;
+}
+
+.nav a{
+text-decoration:none;
+color:#111;
+margin-left:40px;
+font-weight:500;
+opacity:0.7;
+transition:0.3s;
+}
+
+.nav a:hover{
+opacity:1;
+}
+
+/* HERO */
 .hero{
 height:100vh;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
-background:url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
-position:relative;
-}
-.hero::after{
-content:"";
-position:absolute;
-inset:0;
-background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.85));
-}
-.hero-content{
-position:relative;
-z-index:2;
-max-width:900px;
 padding:0 20px;
 }
+
+.hero-content{
+max-width:900px;
+}
+
 .hero h1{
 font-size:64px;
 font-weight:800;
-margin-bottom:20px;
+letter-spacing:-2px;
+margin-bottom:30px;
 }
+
 .hero p{
 font-size:22px;
-opacity:0.9;
-margin-bottom:40px;
+font-weight:400;
+opacity:0.6;
+margin-bottom:50px;
 }
+
 .cta{
 display:inline-block;
-padding:18px 45px;
-background:#22c55e;
-color:#0f172a;
-font-weight:700;
+padding:18px 40px;
+border:1px solid #111;
 border-radius:50px;
 text-decoration:none;
+color:#111;
+font-weight:500;
 transition:0.3s;
 }
-.cta:hover{background:#16a34a;}
 
-.section{
-padding:120px 8%;
+.cta:hover{
+background:#111;
+color:#fff;
 }
+
+/* SECTION */
+.section{
+padding:160px 8%;
+}
+
 .container{
-max-width:1200px;
+max-width:1000px;
 margin:auto;
 }
+
 h2{
 font-size:42px;
-margin-bottom:30px;
-text-align:center;
-}
-
-.problem{
-text-align:center;
-max-width:800px;
-margin:0 auto;
-font-size:20px;
-opacity:0.85;
-}
-
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:40px;
-margin-top:60px;
-}
-.card{
-background:#1e293b;
-padding:50px;
-border-radius:20px;
-box-shadow:0 20px 60px rgba(0,0,0,0.6);
-transition:0.3s;
-}
-.card:hover{transform:translateY(-10px);}
-
-.trust{
-background:#111827;
-text-align:center;
-padding:100px 8%;
-}
-.trust h3{
-font-size:28px;
-margin-bottom:20px;
-}
-.trust p{
-opacity:0.85;
-}
-
-.contact{
-background:#0b1220;
-text-align:center;
-}
-.contact form{
-margin-top:50px;
-display:flex;
-flex-direction:column;
-gap:25px;
-max-width:600px;
-margin-left:auto;
-margin-right:auto;
-}
-.contact input,
-.contact textarea{
-padding:20px;
-border-radius:12px;
-border:none;
-background:#1e293b;
-color:white;
-font-size:16px;
-}
-.contact button{
-padding:20px;
-border-radius:12px;
-border:none;
-background:#22c55e;
-color:#0f172a;
 font-weight:700;
-font-size:16px;
-cursor:pointer;
+letter-spacing:-1px;
+margin-bottom:40px;
 }
-.contact button:hover{background:#16a34a;}
 
-footer{
-padding:60px;
-text-align:center;
-background:#0f172a;
+.text-large{
+font-size:22px;
+opacity:0.7;
+}
+
+/* SERVICES */
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:80px;
+margin-top:80px;
+}
+
+.service h3{
+font-size:20px;
+margin-bottom:15px;
+}
+
+.service p{
 opacity:0.6;
 }
 
+/* CONTACT */
+.contact form{
+margin-top:60px;
+display:flex;
+flex-direction:column;
+gap:25px;
+}
+
+.contact input,
+.contact textarea{
+padding:20px;
+border:1px solid rgba(0,0,0,0.1);
+border-radius:12px;
+font-size:16px;
+background:#fafafa;
+}
+
+.contact button{
+padding:20px;
+border:none;
+border-radius:50px;
+background:#111;
+color:#fff;
+font-weight:500;
+cursor:pointer;
+transition:0.3s;
+}
+
+.contact button:hover{
+opacity:0.8;
+}
+
+/* FOOTER */
+footer{
+padding:80px;
+text-align:center;
+opacity:0.4;
+font-size:14px;
+}
+
 @media(max-width:900px){
-.hero h1{font-size:40px;}
+.hero h1{
+font-size:42px;
+}
+.section{
+padding:120px 8%;
+}
 }
 </style>
 </head>
 
 <body>
 
-<header class="navbar">
-<div class="nav-container">
+<header class="nav">
+<div class="nav-inner">
 <div class="logo">RD Systems</div>
 <nav>
-<a href="#leistungen">Leistungen</a>
+<a href="#leistung">Leistung</a>
 <a href="#kontakt">Kontakt</a>
 </nav>
 </div>
@@ -194,58 +207,50 @@ opacity:0.6;
 
 <section class="hero">
 <div class="hero-content">
-<h1>Ihre Website sollte Kunden bringen. Nicht nur gut aussehen.</h1>
-<p>Ich baue digitale Systeme, die Vertrauen erzeugen und Anfragen generieren – nicht nur hübsche Oberflächen.</p>
-<a href="#kontakt" class="cta">Kostenlose Analyse sichern</a>
+<h1>Klarheit ist Luxus.</h1>
+<p>Ich entwickle digitale Systeme für Unternehmen, die Struktur statt Spielerei wollen.</p>
+<a href="#kontakt" class="cta">Projekt besprechen</a>
 </div>
 </section>
 
-<section class="section">
+<section id="leistung" class="section">
 <div class="container">
-<h2>Warum viele Websites nicht verkaufen</h2>
-<p class="problem">
-Unklare Struktur. Kein strategischer Aufbau. Keine Führung.
-Besucher klicken – und verschwinden wieder.
-Eine Website ohne System ist nur eine digitale Visitenkarte.
+<h2>Digitale Präzision</h2>
+<p class="text-large">
+Eine Website ist kein Designobjekt.  
+Sie ist ein Werkzeug.  
+Struktur. Führung. Wirkung.
 </p>
-</div>
-</section>
 
-<section id="leistungen" class="section">
-<div class="container">
-<h2>Was Sie bekommen</h2>
-<div class="cards">
-<div class="card">
-<h3>Strategisches Webdesign</h3>
-<p>Strukturierte Hierarchie, psychologische Führung und klares Messaging.</p>
+<div class="services">
+<div class="service">
+<h3>Strategisches Design</h3>
+<p>Klare Hierarchie, reduzierte Gestaltung, starke Typografie.</p>
 </div>
-<div class="card">
-<h3>Technische Präzision</h3>
-<p>Optimierte Performance, saubere Codebasis, skalierbar für Wachstum.</p>
+
+<div class="service">
+<h3>Technische Umsetzung</h3>
+<p>Saubere Struktur, schnelle Ladezeiten, skalierbare Basis.</p>
 </div>
-<div class="card">
+
+<div class="service">
 <h3>Conversion-Fokus</h3>
-<p>Jede Sektion verfolgt ein Ziel: Vertrauen aufbauen und Anfrage auslösen.</p>
+<p>Jede Sektion verfolgt ein klares Ziel: Anfrage.</p>
 </div>
 </div>
 </div>
-</section>
-
-<section class="trust">
-<h3>Regionale Unternehmen vertrauen auf Klarheit statt Spielerei.</h3>
-<p>Moderne Darstellung. Klare Botschaft. Messbare Ergebnisse.</p>
 </section>
 
 <section id="kontakt" class="section contact">
 <div class="container">
-<h2>Projekt starten</h2>
-<p>Sie erhalten eine ehrliche Einschätzung und konkrete Verbesserungsvorschläge.</p>
+<h2>Kontakt</h2>
+<p class="text-large">Beschreiben Sie Ihr Vorhaben. Sie erhalten eine klare Einschätzung.</p>
 
 <form action="https://formspree.io/f/xzdanbzj" method="POST">
 <input type="text" name="name" placeholder="Name" required>
 <input type="email" name="email" placeholder="E-Mail" required>
-<textarea name="message" rows="6" placeholder="Was soll Ihre Website leisten?" required></textarea>
-<button type="submit">Analyse anfordern</button>
+<textarea name="message" rows="6" placeholder="Projektbeschreibung" required></textarea>
+<button type="submit">Anfrage senden</button>
 </form>
 
 </div>
