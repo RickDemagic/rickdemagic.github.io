@@ -1,1 +1,1 @@
-console.log("RD Systems geladen.");
+console.log("Business Layout geladen.");
