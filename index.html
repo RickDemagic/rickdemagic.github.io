@@ -3,19 +3,38 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RD Systems – Wirtschaftlich strukturierte Websites</title>
+<title>RD Systems | Wirtschaftlich strukturierte Websites</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{
 font-family:'Inter',sans-serif;
-background:#0f2027;
-color:white;
-overflow-x:hidden;
+background:#0f172a;
+color:#fff;
 scroll-behavior:smooth;
+}
+
+nav{
+position:fixed;
+width:100%;
+top:0;
+left:0;
+padding:20px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(15,23,42,0.9);
+backdrop-filter:blur(10px);
+z-index:1000;
+}
+
+nav a{
+color:#00ff9d;
+text-decoration:none;
+font-weight:600;
+margin-left:20px;
 }
 
 section{
@@ -23,45 +42,35 @@ min-height:100vh;
 display:flex;
 align-items:center;
 justify-content:center;
-padding:80px 20px;
-position:relative;
+padding:120px 20px 80px;
 }
 
 .hero{
-background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+background:linear-gradient(135deg,#0f172a,#1e293b);
 text-align:center;
 flex-direction:column;
 }
 
 .hero h1{
-font-size:clamp(32px,5vw,64px);
+font-size:clamp(36px,5vw,64px);
 font-weight:800;
 margin-bottom:20px;
-animation:fadeUp 1s ease forwards;
 }
 
 .hero p{
 font-size:20px;
 opacity:0.8;
 margin-bottom:40px;
-animation:fadeUp 1.4s ease forwards;
-}
-
-.buttons{
-display:flex;
-gap:20px;
-flex-wrap:wrap;
-justify-content:center;
-animation:fadeUp 1.8s ease forwards;
 }
 
 .btn{
 padding:15px 30px;
 border-radius:8px;
 font-weight:600;
-cursor:pointer;
-transition:all .3s ease;
 text-decoration:none;
+transition:all .3s ease;
+display:inline-block;
+margin:10px;
 }
 
 .primary{
@@ -70,8 +79,8 @@ color:#000;
 }
 
 .primary:hover{
-transform:translateY(-3px);
-box-shadow:0 10px 25px rgba(0,255,157,0.3);
+transform:translateY(-4px);
+box-shadow:0 15px 35px rgba(0,255,157,0.3);
 }
 
 .secondary{
@@ -85,7 +94,7 @@ color:#000;
 }
 
 .dark{
-background:#111;
+background:#111827;
 }
 
 .content{
@@ -94,7 +103,7 @@ text-align:center;
 }
 
 .content h2{
-font-size:40px;
+font-size:42px;
 margin-bottom:20px;
 }
 
@@ -102,6 +111,25 @@ margin-bottom:20px;
 font-size:18px;
 opacity:0.8;
 line-height:1.6;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+margin-top:40px;
+}
+
+.card{
+background:#1e293b;
+padding:30px;
+border-radius:12px;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+background:#243447;
 }
 
 footer{
@@ -112,18 +140,13 @@ font-size:14px;
 opacity:0.6;
 }
 
-@keyframes fadeUp{
-from{opacity:0;transform:translateY(40px)}
-to{opacity:1;transform:translateY(0)}
-}
-
-.fade-section{
+.fade{
 opacity:0;
 transform:translateY(60px);
-transition:all 1s ease;
+transition:1s ease;
 }
 
-.fade-section.visible{
+.fade.visible{
 opacity:1;
 transform:translateY(0);
 }
@@ -131,39 +154,56 @@ transform:translateY(0);
 </head>
 <body>
 
+<nav>
+<div><strong>RD Systems</strong></div>
+<div>
+<a href="#leistungen">Leistungen</a>
+<a href="#ansatz">Ansatz</a>
+<a href="#kontakt">Kontakt</a>
+</div>
+</nav>
+
 <section class="hero">
 <h1>Wirtschaftlich strukturierte Websites<br>für regionale Unternehmen</h1>
 <p>Klarheit. Nutzerführung. Messbare Anfragen.</p>
-
-<div class="buttons">
 <a href="#kontakt" class="btn primary">Projekt anfragen</a>
 <a href="tel:+4915565071595" class="btn secondary">Direkt anrufen</a>
-</div>
 </section>
 
-<section class="dark fade-section">
+<section id="leistungen" class="dark fade">
 <div class="content">
-<h2>Warum Struktur entscheidet</h2>
-<p>Die meisten Websites sind hübsch – aber wirtschaftlich wertlos. 
-Ich entwickle klare Systeme mit strategischer Nutzerführung, 
-damit aus Besuchern konkrete Anfragen werden.</p>
+<h2>Leistungen</h2>
+<div class="grid">
+<div class="card">
+<h3>Strategische Struktur</h3>
+<p>Klare Nutzerführung statt Design-Spielerei. Jede Seite hat ein Ziel.</p>
+</div>
+<div class="card">
+<h3>Conversion-Fokus</h3>
+<p>Besucher werden zu Anfragen – durch klare Call-to-Action-Architektur.</p>
+</div>
+<div class="card">
+<h3>Technisch sauber</h3>
+<p>Schnelle Ladezeiten, mobil optimiert, moderne Standards.</p>
+</div>
+</div>
 </div>
 </section>
 
-<section class="fade-section">
+<section id="ansatz" class="fade">
 <div class="content">
 <h2>Mein Ansatz</h2>
-<p>Keine Spielerei. Keine Agentur-Show. 
-Sondern saubere Architektur, klare Botschaften 
-und Conversion-orientierte Struktur.</p>
+<p>Ich baue keine digitalen Visitenkarten.  
+Ich entwickle wirtschaftliche Systeme, die Anfragen erzeugen.  
+Reduziert. Klar. Messbar.</p>
 </div>
 </section>
 
-<section id="kontakt" class="dark fade-section">
+<section id="kontakt" class="dark fade">
 <div class="content">
 <h2>Kontakt</h2>
-<p>Email: rd.system.framework@gmail.com<br>
-Telefon: +49 15565 071595</p>
+<p>rd.system.framework@gmail.com<br>
++49 15565 071595</p>
 </div>
 </section>
 
@@ -172,13 +212,11 @@ Telefon: +49 15565 071595</p>
 </footer>
 
 <script>
-const sections = document.querySelectorAll(".fade-section");
-
-window.addEventListener("scroll", () => {
-sections.forEach(section => {
-const rect = section.getBoundingClientRect();
-if(rect.top < window.innerHeight - 100){
-section.classList.add("visible");
+const elements = document.querySelectorAll('.fade');
+window.addEventListener('scroll',()=>{
+elements.forEach(el=>{
+if(el.getBoundingClientRect().top < window.innerHeight - 100){
+el.classList.add('visible');
 }
 });
 });
