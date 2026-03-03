@@ -8,148 +8,211 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-* {
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
 
-body {
+body{
 font-family:'Inter',sans-serif;
-color:#1e293b;
 background:#ffffff;
+color:#1e293b;
 line-height:1.6;
+overflow-x:hidden;
 }
 
-.container {
-max-width:1100px;
+.container{
+max-width:1200px;
 margin:0 auto;
 padding:0 20px;
 }
 
-.nav {
-background:#ffffff;
+/* NAV */
+
+nav{
+background:white;
 border-bottom:1px solid #e2e8f0;
-position:sticky;
+position:fixed;
+width:100%;
 top:0;
 z-index:1000;
 }
 
-.nav-inner {
+.nav-inner{
 display:flex;
 justify-content:space-between;
 align-items:center;
 height:70px;
 }
 
-.logo {
+.logo{
 font-weight:800;
 font-size:20px;
 }
 
-.nav-links a {
+.nav-links a{
 margin-left:30px;
 text-decoration:none;
 color:#334155;
 font-weight:500;
 }
 
-.hero {
-padding:140px 0 100px 0;
+/* HERO */
+
+.hero{
+height:100vh;
+background:url("https://images.unsplash.com/photo-1492724441997-5dc865305da7") center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
 text-align:center;
-background:#f8fafc;
+position:relative;
+color:white;
 }
 
-.hero h1 {
-font-size:clamp(32px,4vw,48px);
+.hero::before{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(0,0,0,0.55);
+}
+
+.hero-content{
+position:relative;
+z-index:2;
 max-width:800px;
-margin:0 auto 20px auto;
+padding:20px;
 }
 
-.hero p {
-font-size:18px;
-margin-bottom:30px;
-color:#475569;
+.hero h1{
+font-size:clamp(36px,6vw,64px);
+margin-bottom:20px;
 }
 
-.btn-primary {
+.hero p{
+font-size:20px;
+margin-bottom:40px;
+}
+
+.btn-primary{
 display:inline-block;
-padding:14px 28px;
+padding:16px 32px;
 background:#2563eb;
 color:white;
 text-decoration:none;
 border-radius:6px;
 font-weight:600;
+border:none;
+cursor:pointer;
+transition:0.3s;
 }
 
-.section {
-padding:100px 0;
+.btn-primary:hover{
+background:#1d4ed8;
 }
 
-.section.light {
-background:#f1f5f9;
+/* SECTIONS */
+
+.section{
+padding:120px 0;
 }
 
-.section h2 {
+.section.light{
+background:#f8fafc;
+}
+
+.section h2{
 text-align:center;
 margin-bottom:60px;
-font-size:32px;
+font-size:36px;
 }
 
-.grid {
+/* IMAGE GRID */
+
+.image-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:40px;
+gap:30px;
 }
 
-.card {
-background:white;
-padding:40px;
-border-radius:8px;
-box-shadow:0 10px 30px rgba(0,0,0,0.05);
+.image-grid img{
+width:100%;
+border-radius:12px;
+box-shadow:0 20px 50px rgba(0,0,0,0.08);
+transition:0.3s;
 }
 
-.card h3 {
-margin-bottom:15px;
+.image-grid img:hover{
+transform:scale(1.03);
 }
 
-.benefits {
-max-width:600px;
+/* BENEFITS */
+
+.benefits{
+max-width:700px;
 margin:0 auto;
 list-style:none;
+font-size:18px;
 }
 
-.benefits li {
+.benefits li{
 margin-bottom:15px;
-padding-left:20px;
+padding-left:25px;
 position:relative;
 }
 
-.benefits li::before {
-content:"•";
+.benefits li::before{
+content:"✓";
 position:absolute;
 left:0;
 color:#2563eb;
 font-weight:bold;
 }
 
-.footer {
+/* FORM */
+
+.contact-form{
+max-width:600px;
+margin:40px auto 40px auto;
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+.contact-form input,
+.contact-form textarea{
+padding:14px;
+border:1px solid #cbd5e1;
+border-radius:6px;
+font-size:16px;
+font-family:inherit;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+outline:none;
+border-color:#2563eb;
+}
+
+.contact-form button{
+width:fit-content;
+}
+
+/* FOOTER */
+
+footer{
 background:#0f172a;
 color:white;
-padding:40px 0;
+padding:50px 0;
 text-align:center;
-margin-top:60px;
 }
 </style>
-
 </head>
+
 <body>
 
-<nav class="nav">
+<nav>
 <div class="container nav-inner">
 <div class="logo">RD Systems</div>
 <div class="nav-links">
-<a href="#leistungen">Leistungen</a>
+<a href="#projekte">Projekte</a>
 <a href="#vorteile">Vorteile</a>
 <a href="#kontakt">Kontakt</a>
 </div>
@@ -157,29 +220,20 @@ margin-top:60px;
 </nav>
 
 <header class="hero">
-<div class="container">
-<h1>Wirtschaftlich strukturierte Websites für regionale Unternehmen</h1>
-<p>Klarheit. Nutzerführung. Messbare Anfragen.</p>
-<a href="#kontakt" class="btn-primary">Projekt anfragen</a>
+<div class="hero-content">
+<h1>Strukturierte Websites mit Wirkung</h1>
+<p>Design, das Vertrauen schafft. Struktur, die Anfragen erzeugt.</p>
+<a href="#kontakt" class="btn-primary">Projekt starten</a>
 </div>
 </header>
 
-<section id="leistungen" class="section">
+<section id="projekte" class="section">
 <div class="container">
-<h2>Leistungen</h2>
-<div class="grid">
-<div class="card">
-<h3>Analyse & Struktur</h3>
-<p>Klare Positionierung und saubere Seitenarchitektur.</p>
-</div>
-<div class="card">
-<h3>Modernes Design</h3>
-<p>Helle, vertrauensvolle Gestaltung ohne Spielerei.</p>
-</div>
-<div class="card">
-<h3>Conversion-Fokus</h3>
-<p>Gezielte Handlungsführung für mehr Anfragen.</p>
-</div>
+<h2>Visuelle Umsetzung</h2>
+<div class="image-grid">
+<img src="https://images.unsplash.com/photo-1556761175-b413da4baf72">
+<img src="https://images.unsplash.com/photo-1467232004584-a241de8b8b8f">
+<img src="https://images.unsplash.com/photo-1529336953121-adf2d63a8e60">
 </div>
 </div>
 </section>
@@ -188,10 +242,10 @@ margin-top:60px;
 <div class="container">
 <h2>Warum RD Systems?</h2>
 <ul class="benefits">
-<li>Keine Baukasten-Lösungen</li>
+<li>Klare Seitenstruktur statt Chaos</li>
 <li>Mobile Optimierung selbstverständlich</li>
-<li>Saubere technische Umsetzung</li>
-<li>Klare Kommunikation statt Marketing-Blabla</li>
+<li>Professionelle, vertrauensvolle Gestaltung</li>
+<li>Fokus auf echte Anfragen</li>
 </ul>
 </div>
 </section>
@@ -199,12 +253,21 @@ margin-top:60px;
 <section id="kontakt" class="section">
 <div class="container">
 <h2>Kontakt</h2>
-<p>rd.system.framework@gmail.com</p>
-<p>+49 15565 071595</p>
+
+<form action="https://formspree.io/f/mzdallwg" method="POST" class="contact-form">
+<input type="text" name="name" placeholder="Ihr Name" required>
+<input type="email" name="email" placeholder="Ihre E-Mail" required>
+<textarea name="message" rows="5" placeholder="Ihre Nachricht" required></textarea>
+<button type="submit" class="btn-primary">Nachricht senden</button>
+</form>
+
+<p style="text-align:center;">rd.system.framework@gmail.com</p>
+<p style="text-align:center;">+49 15565 071595</p>
+
 </div>
 </section>
 
-<footer class="footer">
+<footer>
 <div class="container">
 © 2026 RD Systems
 </div>
