@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function(){
 const heroContent = document.querySelector(".hero-content");
 setTimeout(() => {
     heroContent.classList.add("active");
-}, 300);
+}, 200);
 
 // Scroll Animation
 const observer = new IntersectionObserver(entries => {
@@ -19,6 +19,14 @@ const observer = new IntersectionObserver(entries => {
 
 document.querySelectorAll(".card").forEach(card => {
     observer.observe(card);
+});
+
+// REAL Parallax
+const heroBg = document.querySelector(".hero-bg");
+
+window.addEventListener("scroll", () => {
+    let scrollY = window.scrollY;
+    heroBg.style.transform = "translateY(" + scrollY * 0.4 + "px)";
 });
 
 });
