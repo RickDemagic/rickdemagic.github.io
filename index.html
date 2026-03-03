@@ -3,146 +3,185 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kostenlose Website Analyse</title>
+<title>RD Systems – Wirtschaftlich strukturierte Websites</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Arial,sans-serif;color:#222;line-height:1.6}
+body{
+font-family:'Inter',sans-serif;
+background:#0f2027;
+color:white;
+overflow-x:hidden;
+scroll-behavior:smooth;
+}
+
+section{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:80px 20px;
+position:relative;
+}
 
 .hero{
-height:100vh;
-background:linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
-url("https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=80");
-background-size:cover;
-background-position:center;
-display:flex;
-justify-content:center;
-align-items:center;
+background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
 text-align:center;
-padding:20px;
-color:white
+flex-direction:column;
 }
 
-.hero-content{max-width:800px}
-.hero small{color:#f4d03f;letter-spacing:2px}
-.hero h1{font-size:42px;margin:20px 0}
+.hero h1{
+font-size:clamp(32px,5vw,64px);
+font-weight:800;
+margin-bottom:20px;
+animation:fadeUp 1s ease forwards;
+}
 
-.button-primary{
-display:inline-block;
-padding:14px 30px;
-border:2px solid #f4d03f;
-color:#f4d03f;
+.hero p{
+font-size:20px;
+opacity:0.8;
+margin-bottom:40px;
+animation:fadeUp 1.4s ease forwards;
+}
+
+.buttons{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+justify-content:center;
+animation:fadeUp 1.8s ease forwards;
+}
+
+.btn{
+padding:15px 30px;
+border-radius:8px;
+font-weight:600;
+cursor:pointer;
+transition:all .3s ease;
 text-decoration:none;
-border-radius:30px;
-margin-top:20px;
-transition:.3s
 }
 
-.button-primary:hover{background:#f4d03f;color:black}
-
-section{padding:80px 20px;text-align:center}
-.container{max-width:900px;margin:auto}
-h2{margin-bottom:30px}
-
-.features{display:grid;gap:20px;margin-top:40px}
-.feature-box{background:#f4f6f8;padding:25px;border-radius:10px}
-
-.form-section{background:#2e7d32;color:white}
-form{max-width:500px;margin:auto;margin-top:30px}
-
-input,textarea{
-width:100%;
-padding:12px;
-margin-bottom:15px;
-border:none;
-border-radius:6px
+.primary{
+background:#00ff9d;
+color:#000;
 }
 
-button{
-width:100%;
-padding:14px;
-background:#f4d03f;
-border:none;
-border-radius:6px;
-font-weight:bold;
-cursor:pointer
+.primary:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 25px rgba(0,255,157,0.3);
 }
 
-button:hover{opacity:.9}
+.secondary{
+border:2px solid #00ff9d;
+color:#00ff9d;
+}
 
-@media(min-width:768px){
-.features{grid-template-columns:repeat(3,1fr)}
-.hero h1{font-size:56px}
+.secondary:hover{
+background:#00ff9d;
+color:#000;
+}
+
+.dark{
+background:#111;
+}
+
+.content{
+max-width:900px;
+text-align:center;
+}
+
+.content h2{
+font-size:40px;
+margin-bottom:20px;
+}
+
+.content p{
+font-size:18px;
+opacity:0.8;
+line-height:1.6;
+}
+
+footer{
+background:#000;
+padding:40px;
+text-align:center;
+font-size:14px;
+opacity:0.6;
+}
+
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(40px)}
+to{opacity:1;transform:translateY(0)}
+}
+
+.fade-section{
+opacity:0;
+transform:translateY(60px);
+transition:all 1s ease;
+}
+
+.fade-section.visible{
+opacity:1;
+transform:translateY(0);
 }
 </style>
 </head>
-
 <body>
 
-<div id="content">
+<section class="hero">
+<h1>Wirtschaftlich strukturierte Websites<br>für regionale Unternehmen</h1>
+<p>Klarheit. Nutzerführung. Messbare Anfragen.</p>
 
-<div class="hero">
-<div class="hero-content">
-<small>MEHR DIREKTUMSATZ FÜR REGIONALE BETRIEBE</small>
-<h1>Ich entwickle Online-Strukturen,<br>die aus Klicks Kunden machen.</h1>
-<a href="#analyse" class="button-primary">Kostenlose Erstanalyse →</a>
-</div>
-</div>
-
-<section>
-<div class="container">
-<h2>Warum Ihre Website aktuell keine Kunden bringt</h2>
-<div class="features">
-<div class="feature-box">Unklare Positionierung</div>
-<div class="feature-box">Kein klarer Handlungsimpuls</div>
-<div class="feature-box">Besucher springen ab</div>
-</div>
+<div class="buttons">
+<a href="#kontakt" class="btn primary">Projekt anfragen</a>
+<a href="tel:+4915565071595" class="btn secondary">Direkt anrufen</a>
 </div>
 </section>
 
-<section>
-<div class="container">
-<h2>Was ich konkret optimiere</h2>
-<div class="features">
-<div class="feature-box">Struktur & Klarheit</div>
-<div class="feature-box">Conversion-Fokus</div>
-<div class="feature-box">Saubere Nutzerführung</div>
-</div>
+<section class="dark fade-section">
+<div class="content">
+<h2>Warum Struktur entscheidet</h2>
+<p>Die meisten Websites sind hübsch – aber wirtschaftlich wertlos. 
+Ich entwickle klare Systeme mit strategischer Nutzerführung, 
+damit aus Besuchern konkrete Anfragen werden.</p>
 </div>
 </section>
 
-<section id="analyse" class="form-section">
-<div class="container">
-<h2>Kostenlose Website Analyse anfordern</h2>
-
-<form action="https://formsubmit.co/rd.system.framework@gmail.com" method="POST">
-<input type="hidden" name="_captcha" value="false">
-<input type="hidden" name="_next" value="https://rickdemagic.github.io/?danke=true">
-
-<input type="text" name="Name" placeholder="Ihr Name" required>
-<input type="email" name="Email" placeholder="Ihre E-Mail-Adresse" required>
-<textarea name="Nachricht" placeholder="Website-URL und kurze Beschreibung" rows="4" required></textarea>
-
-<button type="submit">Jetzt Analyse anfordern</button>
-</form>
-
+<section class="fade-section">
+<div class="content">
+<h2>Mein Ansatz</h2>
+<p>Keine Spielerei. Keine Agentur-Show. 
+Sondern saubere Architektur, klare Botschaften 
+und Conversion-orientierte Struktur.</p>
 </div>
 </section>
 
+<section id="kontakt" class="dark fade-section">
+<div class="content">
+<h2>Kontakt</h2>
+<p>Email: rd.system.framework@gmail.com<br>
+Telefon: +49 15565 071595</p>
 </div>
+</section>
+
+<footer>
+© 2026 RD Systems
+</footer>
 
 <script>
-if(window.location.search.includes("danke=true")){
-document.getElementById("content").innerHTML = `
-<div style="display:flex;justify-content:center;align-items:center;height:100vh;font-family:Arial;text-align:center;padding:20px;">
-<div>
-<h1 style="color:#2e7d32;">Vielen Dank!</h1>
-<p>Ihre Anfrage wurde erfolgreich übermittelt.</p>
-<p>Sie erhalten in Kürze eine Rückmeldung per E-Mail.</p>
-<a href="/" style="display:inline-block;margin-top:20px;color:#2e7d32;text-decoration:none;">Zurück zur Startseite</a>
-</div>
-</div>`;
+const sections = document.querySelectorAll(".fade-section");
+
+window.addEventListener("scroll", () => {
+sections.forEach(section => {
+const rect = section.getBoundingClientRect();
+if(rect.top < window.innerHeight - 100){
+section.classList.add("visible");
 }
+});
+});
 </script>
 
 </body>
