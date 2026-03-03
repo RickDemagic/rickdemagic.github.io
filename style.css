@@ -39,7 +39,6 @@ align-items:center;
 
 .logo{
 font-weight:700;
-font-size:18px;
 }
 
 .nav-links a{
@@ -54,12 +53,23 @@ font-weight:500;
 .hero{
 position:relative;
 height:100vh;
-background:url('hero.jpg') center/cover no-repeat fixed;
+overflow:hidden;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
 color:white;
+}
+
+.hero-bg{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:120%;
+background:url('hero.jpg') center/cover no-repeat;
+transform:translateY(0);
+will-change:transform;
 }
 
 .hero-overlay{
@@ -73,11 +83,11 @@ rgba(0,0,0,0.65)
 
 .hero-content{
 position:relative;
-z-index:2;
+z-index:3;
 max-width:850px;
 padding:20px;
 opacity:0;
-transform:translateY(30px);
+transform:translateY(40px);
 transition:all 1.2s ease;
 }
 
@@ -136,19 +146,14 @@ background:white;
 padding:35px;
 border-radius:14px;
 box-shadow:0 15px 35px rgba(0,0,0,0.06);
-transition:0.3s;
 opacity:0;
 transform:translateY(40px);
+transition:all 0.8s ease;
 }
 
 .card.visible{
 opacity:1;
 transform:translateY(0);
-transition:all 0.8s ease;
-}
-
-.card:hover{
-transform:translateY(-6px);
 }
 
 /* CONTACT */
@@ -181,14 +186,7 @@ color:white;
 border-radius:10px;
 font-size:16px;
 cursor:pointer;
-transition:0.3s;
 }
-
-.contact-form button:hover{
-background:#1d4ed8;
-}
-
-/* FOOTER */
 
 footer{
 background:#0f172a;
