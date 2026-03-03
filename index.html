@@ -8,11 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-* {
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+* {margin:0;padding:0;box-sizing:border-box;}
 
 body {
 font-family:'Inter',sans-serif;
@@ -42,10 +38,7 @@ align-items:center;
 height:70px;
 }
 
-.logo {
-font-weight:800;
-font-size:20px;
-}
+.logo {font-weight:800;font-size:20px;}
 
 .nav-links a {
 margin-left:30px;
@@ -55,21 +48,34 @@ font-weight:500;
 }
 
 .hero {
-padding:140px 0 100px 0;
+position:relative;
+padding:160px 20px;
 text-align:center;
-background:#f8fafc;
+color:white;
+background:url("https://images.unsplash.com/photo-1492724441997-5dc865305da7") center/cover no-repeat;
+}
+
+.hero::before {
+content:"";
+position:absolute;
+inset:0;
+background:rgba(0,0,0,0.6);
+}
+
+.hero .container {
+position:relative;
+z-index:2;
 }
 
 .hero h1 {
 font-size:clamp(32px,4vw,48px);
-max-width:800px;
-margin:0 auto 20px auto;
+margin-bottom:20px;
 }
 
 .hero p {
 font-size:18px;
 margin-bottom:30px;
-color:#475569;
+opacity:0.9;
 }
 
 .btn-primary {
@@ -104,13 +110,47 @@ gap:40px;
 
 .card {
 background:white;
-padding:40px;
-border-radius:8px;
-box-shadow:0 10px 30px rgba(0,0,0,0.05);
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 15px 40px rgba(0,0,0,0.08);
 }
 
-.card h3 {
+.card img {
+width:100%;
+height:200px;
+object-fit:cover;
+}
+
+.card-content {
+padding:25px;
+}
+
+.card-content h3 {
 margin-bottom:15px;
+}
+
+.image-section {
+position:relative;
+height:400px;
+background:url("https://images.unsplash.com/photo-1556761175-b413da4baf72") center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+text-align:center;
+}
+
+.image-section::before {
+content:"";
+position:absolute;
+inset:0;
+background:rgba(0,0,0,0.5);
+}
+
+.image-section h2 {
+position:relative;
+z-index:2;
+font-size:36px;
 }
 
 .benefits {
@@ -150,7 +190,6 @@ margin-top:60px;
 <div class="logo">RD Systems</div>
 <div class="nav-links">
 <a href="#leistungen">Leistungen</a>
-<a href="#vorteile">Vorteile</a>
 <a href="#kontakt">Kontakt</a>
 </div>
 </div>
@@ -168,35 +207,40 @@ margin-top:60px;
 <div class="container">
 <h2>Leistungen</h2>
 <div class="grid">
+
 <div class="card">
+<img src="https://images.unsplash.com/photo-1551434678-e076c223a692">
+<div class="card-content">
 <h3>Analyse & Struktur</h3>
 <p>Klare Positionierung und saubere Seitenarchitektur.</p>
 </div>
+</div>
+
 <div class="card">
+<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085">
+<div class="card-content">
 <h3>Modernes Design</h3>
 <p>Helle, vertrauensvolle Gestaltung ohne Spielerei.</p>
 </div>
+</div>
+
 <div class="card">
+<img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f">
+<div class="card-content">
 <h3>Conversion-Fokus</h3>
 <p>Gezielte Handlungsführung für mehr Anfragen.</p>
 </div>
 </div>
+
+</div>
 </div>
 </section>
 
-<section id="vorteile" class="section light">
-<div class="container">
-<h2>Warum RD Systems?</h2>
-<ul class="benefits">
-<li>Keine Baukasten-Lösungen</li>
-<li>Mobile Optimierung selbstverständlich</li>
-<li>Saubere technische Umsetzung</li>
-<li>Klare Kommunikation statt Marketing-Blabla</li>
-</ul>
-</div>
+<section class="image-section">
+<h2>Struktur schlägt Spielerei</h2>
 </section>
 
-<section id="kontakt" class="section">
+<section id="kontakt" class="section light">
 <div class="container">
 <h2>Kontakt</h2>
 <p>rd.system.framework@gmail.com</p>
