@@ -5,265 +5,209 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RD Systems</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-
-body{
-font-family:'Inter',sans-serif;
-color:#1e293b;
-background:#ffffff;
-line-height:1.6;
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-.container{
-max-width:1100px;
-margin:0 auto;
-padding:0 20px;
+body {
+    font-family:'Poppins', sans-serif;
+    background:#f4f7fb;
+    color:#1e293b;
+    line-height:1.6;
 }
 
-.nav{
-background:#fff;
-border-bottom:1px solid #e2e8f0;
-position:sticky;
-top:0;
-z-index:1000;
+.container {
+    width:90%;
+    max-width:1100px;
+    margin:auto;
 }
 
-.nav-inner{
-display:flex;
-justify-content:space-between;
-align-items:center;
-height:70px;
+nav {
+    background:white;
+    padding:20px 0;
+    box-shadow:0 4px 12px rgba(0,0,0,0.05);
+    position:sticky;
+    top:0;
+    z-index:100;
 }
 
-.logo{font-weight:800;font-size:20px;}
-
-.nav-links a{
-margin-left:30px;
-text-decoration:none;
-color:#334155;
+nav .container {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 
-.hero{
-position:relative;
-padding:160px 20px;
-text-align:center;
-color:white;
-background:url("https://images.unsplash.com/photo-1492724441997-5dc865305da7") center/cover no-repeat;
+nav a {
+    text-decoration:none;
+    color:#1e293b;
+    margin-left:25px;
+    font-weight:500;
 }
 
-.hero::before{
-content:"";
-position:absolute;
-inset:0;
-background:rgba(0,0,0,0.6);
+.hero {
+    padding:100px 0;
+    text-align:center;
 }
 
-.hero .container{
-position:relative;
-z-index:2;
+.hero h1 {
+    font-size:42px;
+    margin-bottom:20px;
 }
 
-.hero h1{
-font-size:clamp(32px,4vw,48px);
-margin-bottom:20px;
+.hero p {
+    font-size:18px;
+    color:#475569;
 }
 
-.hero p{
-margin-bottom:30px;
+.section {
+    padding:80px 0;
 }
 
-.btn-primary{
-display:inline-block;
-padding:14px 28px;
-background:#2563eb;
-color:white;
-text-decoration:none;
-border-radius:6px;
-font-weight:600;
+.section h2 {
+    text-align:center;
+    margin-bottom:40px;
+    font-size:30px;
 }
 
-.section{
-padding:100px 0;
+.services {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
 }
 
-.section.light{
-background:#f1f5f9;
+.card {
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.05);
 }
 
-.section h2{
-text-align:center;
-margin-bottom:50px;
-font-size:32px;
+.card img {
+    width:100%;
+    border-radius:8px;
+    margin-bottom:15px;
 }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:40px;
+.card h3 {
+    margin-bottom:10px;
 }
 
-.card{
-background:white;
-border-radius:10px;
-overflow:hidden;
-box-shadow:0 15px 40px rgba(0,0,0,0.08);
+.contact-form {
+    max-width:600px;
+    margin:0 auto;
 }
 
-.card img{
-width:100%;
-height:200px;
-object-fit:cover;
+.contact-form input,
+.contact-form textarea {
+    width:100%;
+    padding:15px;
+    margin-bottom:15px;
+    border:1px solid #cbd5e1;
+    border-radius:8px;
+    font-size:15px;
 }
 
-.card-content{
-padding:25px;
+.contact-form button {
+    width:100%;
+    padding:15px;
+    border:none;
+    background:#2563eb;
+    color:white;
+    font-size:16px;
+    border-radius:8px;
+    cursor:pointer;
 }
 
-.image-section{
-position:relative;
-height:400px;
-background:url("https://images.unsplash.com/photo-1556761175-b413da4baf72") center/cover no-repeat;
-display:flex;
-align-items:center;
-justify-content:center;
-color:white;
+.contact-form button:hover {
+    background:#1d4ed8;
 }
 
-.image-section::before{
-content:"";
-position:absolute;
-inset:0;
-background:rgba(0,0,0,0.5);
-}
-
-.image-section h2{
-position:relative;
-z-index:2;
-font-size:36px;
-}
-
-form{
-max-width:600px;
-margin:0 auto;
-display:flex;
-flex-direction:column;
-gap:20px;
-}
-
-input,textarea{
-padding:14px;
-border:1px solid #cbd5e1;
-border-radius:6px;
-font-size:16px;
-width:100%;
-}
-
-textarea{
-min-height:120px;
-resize:vertical;
-}
-
-button{
-padding:14px;
-background:#2563eb;
-color:white;
-border:none;
-border-radius:6px;
-font-weight:600;
-cursor:pointer;
-}
-
-button:hover{
-background:#1d4ed8;
-}
-
-.footer{
-background:#0f172a;
-color:white;
-padding:40px 0;
-text-align:center;
-margin-top:60px;
+footer {
+    background:#1e293b;
+    color:white;
+    text-align:center;
+    padding:30px 0;
+    margin-top:60px;
 }
 </style>
+
 </head>
 <body>
 
-<nav class="nav">
-<div class="container nav-inner">
-<div class="logo">RD Systems</div>
-<div class="nav-links">
-<a href="#leistungen">Leistungen</a>
-<a href="#kontakt">Kontakt</a>
-</div>
-</div>
+<nav>
+    <div class="container">
+        <strong>RD Systems</strong>
+        <div>
+            <a href="#leistungen">Leistungen</a>
+            <a href="#kontakt">Kontakt</a>
+        </div>
+    </div>
 </nav>
 
-<header class="hero">
-<div class="container">
-<h1>Wirtschaftlich strukturierte Websites für regionale Unternehmen</h1>
-<p>Klarheit. Nutzerführung. Messbare Anfragen.</p>
-<a href="#kontakt" class="btn-primary">Projekt anfragen</a>
-</div>
-</header>
+<section class="hero">
+    <div class="container">
+        <h1>Moderne Websites für regionale Unternehmen</h1>
+        <p>Hell. Klar. Strukturiert. Ohne Marketing-Blabla.</p>
+    </div>
+</section>
 
 <section id="leistungen" class="section">
-<div class="container">
-<h2>Leistungen</h2>
-<div class="grid">
+    <div class="container">
+        <h2>Leistungen</h2>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1551434678-e076c223a692">
-<div class="card-content">
-<h3>Analyse & Struktur</h3>
-<p>Klare Positionierung und saubere Seitenarchitektur.</p>
-</div>
-</div>
+        <div class="services">
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085">
-<div class="card-content">
-<h3>Modernes Design</h3>
-<p>Helle, vertrauensvolle Gestaltung.</p>
-</div>
-</div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7" alt="">
+                <h3>Webdesign</h3>
+                <p>Klares Design mit Fokus auf Nutzerführung und Conversion.</p>
+            </div>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f">
-<div class="card-content">
-<h3>Conversion-Fokus</h3>
-<p>Gezielte Handlungsführung für mehr Anfragen.</p>
-</div>
-</div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d" alt="">
+                <h3>Struktur & Strategie</h3>
+                <p>Saubere Seitenstruktur statt Chaos und Spielerei.</p>
+            </div>
 
-</div>
-</div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" alt="">
+                <h3>Technische Umsetzung</h3>
+                <p>Schnell. Stabil. Wartbar. Ohne unnötige Systeme.</p>
+            </div>
+
+        </div>
+    </div>
 </section>
 
-<section class="image-section">
-<h2>Struktur schlägt Spielerei</h2>
+<section id="kontakt" class="section">
+    <div class="container">
+        <h2>Kontakt</h2>
+
+        <div class="contact-form">
+
+            <form action="https://formspree.io/f/mzdal1wg" method="POST">
+
+                <input type="text" name="name" placeholder="Name" required>
+
+                <input type="email" name="email" placeholder="E-Mail" required>
+
+                <textarea name="message" rows="6" placeholder="Nachricht" required></textarea>
+
+                <button type="submit">Nachricht senden</button>
+
+            </form>
+
+        </div>
+    </div>
 </section>
 
-<section id="kontakt" class="section light">
-<div class="container">
-<h2>Kontakt</h2>
-
-<form action="https://formspree.io/f/mzdal1wg" method="POST">
-<input type="text" name="name" placeholder="Ihr Name" required>
-<input type="email" name="email" placeholder="Ihre E-Mail" required>
-<textarea name="message" placeholder="Ihre Nachricht" required></textarea>
-<button type="submit">Nachricht senden</button>
-</form>
-
-</div>
-</section>
-
-<footer class="footer">
-<div class="container">
-© 2026 RD Systems
-</div>
+<footer>
+    © 2026 RD Systems
 </footer>
 
 </body>
