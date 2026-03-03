@@ -8,82 +8,298 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="style.css">
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:#0f172a;
+color:#e2e8f0;
+line-height:1.7;
+overflow-x:hidden;
+scroll-behavior:smooth;
+}
+
+/* NAVBAR */
+.navbar{
+position:fixed;
+width:100%;
+padding:25px 8%;
+background:rgba(15,23,42,0.7);
+backdrop-filter:blur(20px);
+z-index:1000;
+}
+
+.nav-container{
+display:flex;
+justify-content:space-between;
+align-items:center;
+max-width:1400px;
+margin:auto;
+}
+
+.logo{
+font-weight:800;
+font-size:20px;
+}
+
+.navbar a{
+color:#e2e8f0;
+text-decoration:none;
+margin-left:30px;
+font-weight:500;
+transition:0.3s;
+}
+
+.navbar a:hover{
+color:#22c55e;
+}
+
+/* HERO */
+.hero{
+height:100vh;
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+background:url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
+}
+
+.hero::after{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.85));
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+max-width:900px;
+animation:fadeUp 1.2s ease;
+}
+
+.hero h1{
+font-size:64px;
+font-weight:800;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:22px;
+opacity:0.9;
+}
+
+.cta-button{
+display:inline-block;
+margin-top:40px;
+padding:18px 40px;
+background:#22c55e;
+color:#0f172a;
+font-weight:600;
+border-radius:50px;
+text-decoration:none;
+transition:0.3s;
+}
+
+.cta-button:hover{
+background:#16a34a;
+}
+
+/* SECTION */
+.section{
+padding:140px 8%;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+}
+
+.split{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:80px;
+align-items:center;
+}
+
+.split img{
+width:100%;
+border-radius:20px;
+box-shadow:0 30px 80px rgba(0,0,0,0.5);
+}
+
+.section h2{
+font-size:42px;
+margin-bottom:40px;
+}
+
+/* SERVICES */
+.services{
+background:#111827;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:50px;
+margin-top:60px;
+}
+
+.card{
+background:#1e293b;
+padding:50px;
+border-radius:20px;
+box-shadow:0 25px 70px rgba(0,0,0,0.6);
+transition:0.4s;
+}
+
+.card:hover{
+transform:translateY(-12px);
+}
+
+/* CONTACT */
+.contact{
+background:#0b1220;
+text-align:center;
+}
+
+.contact form{
+margin-top:60px;
+display:flex;
+flex-direction:column;
+gap:25px;
+max-width:600px;
+margin-left:auto;
+margin-right:auto;
+}
+
+.contact input,
+.contact textarea{
+padding:20px;
+border-radius:14px;
+border:none;
+background:#1e293b;
+color:white;
+font-size:16px;
+}
+
+.contact button{
+padding:20px;
+border-radius:14px;
+border:none;
+background:#22c55e;
+color:#0f172a;
+font-weight:700;
+font-size:16px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.contact button:hover{
+background:#16a34a;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:60px;
+background:#0f172a;
+}
+
+/* ANIMATION */
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(40px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+@media(max-width:900px){
+.split{grid-template-columns:1fr;}
+.hero h1{font-size:42px;}
+}
+</style>
 </head>
 
 <body>
 
 <header class="navbar">
-    <div class="nav-container">
-        <div class="logo">RD Systems</div>
-        <nav>
-            <a href="#about">Überblick</a>
-            <a href="#services">Leistungen</a>
-            <a href="#contact">Kontakt</a>
-        </nav>
-    </div>
+<div class="nav-container">
+<div class="logo">RD Systems</div>
+<nav>
+<a href="#about">Überblick</a>
+<a href="#services">Leistungen</a>
+<a href="#contact">Kontakt</a>
+</nav>
+</div>
 </header>
 
 <section class="hero">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-        <h1>Digitale Struktur mit Wirkung</h1>
-        <p>Premium-Websites für regionale Unternehmen – strategisch, klar, modern.</p>
-        <a href="#contact" class="cta-button">Projekt starten</a>
-    </div>
+<div class="hero-content">
+<h1>Digitale Struktur mit Wirkung</h1>
+<p>Premium-Websites für regionale Unternehmen – strategisch, klar, modern.</p>
+<a href="#contact" class="cta-button">Projekt starten</a>
+</div>
 </section>
 
 <section id="about" class="section">
-    <div class="container split">
-        <div class="text-block">
-            <h2>Präzision statt Baukasten</h2>
-            <p>
-                Ihre Website ist kein Aushängeschild – sie ist ein Verkaufssystem.
-                Struktur, Nutzerführung und technische Qualität entscheiden über Wirkung.
-            </p>
-        </div>
-        <div class="image-block">
-            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80">
-        </div>
-    </div>
+<div class="container split">
+<div>
+<h2>Präzision statt Baukasten</h2>
+<p>
+Ihre Website ist kein Aushängeschild.
+Sie ist ein System zur Kundengewinnung.
+Struktur, Hierarchie und technische Stabilität entscheiden über Wirkung.
+</p>
+</div>
+<img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80">
+</div>
 </section>
 
-<section id="services" class="section dark">
-    <div class="container">
-        <h2>Leistungen</h2>
-        <div class="cards">
-            <div class="card">
-                <h3>Premium Webdesign</h3>
-                <p>Design mit Tiefe, Hierarchie und klarer Führung.</p>
-            </div>
-            <div class="card">
-                <h3>Technische Umsetzung</h3>
-                <p>Optimierte Performance, saubere Struktur, skalierbar.</p>
-            </div>
-            <div class="card">
-                <h3>Conversion-Struktur</h3>
-                <p>Besucher werden geführt – nicht verwirrt.</p>
-            </div>
-        </div>
-    </div>
+<section id="services" class="section services">
+<div class="container">
+<h2>Leistungen</h2>
+
+<div class="cards">
+<div class="card">
+<h3>Premium Webdesign</h3>
+<p>Design mit Tiefe, visueller Hierarchie und klarer Nutzerführung.</p>
+</div>
+
+<div class="card">
+<h3>Technische Umsetzung</h3>
+<p>Performance-Optimierung, saubere Struktur und Skalierbarkeit.</p>
+</div>
+
+<div class="card">
+<h3>Conversion-Optimierung</h3>
+<p>Besucher werden geführt – nicht verwirrt.</p>
+</div>
+</div>
+</div>
 </section>
 
 <section id="contact" class="section contact">
-    <div class="container">
-        <h2>Kontakt</h2>
-        <form action="https://formspree.io/f/mzdal1wg" method="POST">
-            <input type="text" name="name" placeholder="Name" required>
-            <input type="email" name="email" placeholder="E-Mail" required>
-            <textarea name="message" placeholder="Nachricht" required></textarea>
-            <button type="submit">Anfrage senden</button>
-        </form>
-    </div>
+<div class="container">
+<h2>Kontakt</h2>
+
+<form action="https://formspree.io/f/xzdanbzj" method="POST">
+<input type="text" name="name" placeholder="Name" required>
+<input type="email" name="email" placeholder="E-Mail" required>
+<textarea name="message" rows="6" placeholder="Nachricht" required></textarea>
+<button type="submit">Anfrage senden</button>
+</form>
+
+</div>
 </section>
 
 <footer>
 © 2026 RD Systems
 </footer>
 
-<script src="script.js"></script>
 </body>
 </html>
