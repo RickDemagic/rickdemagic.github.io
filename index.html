@@ -80,8 +80,6 @@ color:white;
 text-decoration:none;
 border-radius:6px;
 font-weight:600;
-border:none;
-cursor:pointer;
 }
 
 .section {
@@ -134,37 +132,6 @@ left:0;
 color:#2563eb;
 font-weight:bold;
 }
-
-/* ===== FORMULAR ===== */
-
-.contact-form {
-max-width:600px;
-margin:40px auto 40px auto;
-display:flex;
-flex-direction:column;
-gap:20px;
-}
-
-.contact-form input,
-.contact-form textarea {
-padding:14px;
-border:1px solid #cbd5e1;
-border-radius:6px;
-font-size:16px;
-font-family:inherit;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-outline:none;
-border-color:#2563eb;
-}
-
-.contact-form button {
-width:fit-content;
-}
-
-/* ===== FOOTER ===== */
 
 .footer {
 background:#0f172a;
@@ -232,17 +199,8 @@ margin-top:60px;
 <section id="kontakt" class="section">
 <div class="container">
 <h2>Kontakt</h2>
-
-<form action="https://formspree.io/f/mzdallwg" method="POST" class="contact-form">
-<input type="text" name="name" placeholder="Ihr Name" required>
-<input type="email" name="email" placeholder="Ihre E-Mail" required>
-<textarea name="message" rows="5" placeholder="Ihre Nachricht" required></textarea>
-<button type="submit" class="btn-primary">Nachricht senden</button>
-</form>
-
 <p>rd.system.framework@gmail.com</p>
 <p>+49 15565 071595</p>
-
 </div>
 </section>
 
