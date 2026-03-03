@@ -5,25 +5,31 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RD Systems – Digitale Präzision</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
 body{
 font-family:'Inter',sans-serif;
 background:#0f172a;
 color:#e2e8f0;
 line-height:1.7;
+overflow-x:hidden;
 scroll-behavior:smooth;
 }
 
-/* NAV */
+/* NAVIGATION */
 .navbar{
 position:fixed;
 width:100%;
 padding:25px 8%;
-background:rgba(15,23,42,0.7);
+background:rgba(15,23,42,0.75);
 backdrop-filter:blur(20px);
 z-index:1000;
 }
@@ -36,26 +42,32 @@ max-width:1400px;
 margin:auto;
 }
 
-.logo{font-weight:800;font-size:20px;}
+.logo{
+font-weight:800;
+font-size:20px;
+}
 
 .navbar a{
 color:#e2e8f0;
 text-decoration:none;
 margin-left:30px;
-transition:.3s;
+font-weight:500;
+transition:0.3s;
 }
 
-.navbar a:hover{color:#22c55e;}
+.navbar a:hover{
+color:#22c55e;
+}
 
 /* HERO */
 .hero{
 height:100vh;
+position:relative;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
 background:url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
-position:relative;
 }
 
 .hero::after{
@@ -80,50 +92,75 @@ margin-bottom:20px;
 
 .hero p{
 font-size:22px;
-opacity:.9;
+opacity:0.9;
 }
 
-.hero-buttons{
+.cta-button{
+display:inline-block;
 margin-top:40px;
-display:flex;
-gap:20px;
-justify-content:center;
-flex-wrap:wrap;
-}
-
-.btn-primary{
 padding:18px 40px;
 background:#22c55e;
 color:#0f172a;
 font-weight:600;
 border-radius:50px;
 text-decoration:none;
-transition:.3s;
+transition:0.3s;
 }
 
-.btn-primary:hover{background:#16a34a;}
-
-.btn-secondary{
-padding:18px 40px;
-border:1px solid #334155;
-border-radius:50px;
-color:#e2e8f0;
-text-decoration:none;
-transition:.3s;
-}
-
-.btn-secondary:hover{
-background:#1e293b;
+.cta-button:hover{
+background:#16a34a;
 }
 
 /* SECTION */
-.section{padding:140px 8%;}
-.container{max-width:1200px;margin:auto;}
+.section{
+padding:140px 8%;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+}
+
+.split{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:80px;
+align-items:center;
+}
+
+.split img{
+width:100%;
+border-radius:20px;
+box-shadow:0 30px 80px rgba(0,0,0,0.5);
+}
 
 .section h2{
 font-size:42px;
 margin-bottom:40px;
-text-align:center;
+}
+
+/* SERVICES */
+.services{
+background:#111827;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:50px;
+margin-top:60px;
+}
+
+.card{
+background:#1e293b;
+padding:50px;
+border-radius:20px;
+box-shadow:0 25px 70px rgba(0,0,0,0.6);
+transition:0.4s;
+}
+
+.card:hover{
+transform:translateY(-12px);
 }
 
 /* CONTACT */
@@ -132,78 +169,57 @@ background:#0b1220;
 text-align:center;
 }
 
-.form-group{
-position:relative;
-margin-bottom:30px;
+.contact form{
+margin-top:60px;
+display:flex;
+flex-direction:column;
+gap:25px;
+max-width:600px;
+margin-left:auto;
+margin-right:auto;
 }
 
 .contact input,
 .contact textarea{
-width:100%;
 padding:20px;
-background:#1e293b;
+border-radius:14px;
 border:none;
-border-radius:12px;
+background:#1e293b;
 color:white;
 font-size:16px;
 }
 
-.contact label{
-position:absolute;
-left:20px;
-top:20px;
-color:#94a3b8;
-transition:.3s;
-pointer-events:none;
-}
-
-.contact input:focus + label,
-.contact input:not(:placeholder-shown) + label,
-.contact textarea:focus + label,
-.contact textarea:not(:placeholder-shown) + label{
-top:-10px;
-left:15px;
-font-size:12px;
-background:#0b1220;
-padding:0 5px;
-color:#22c55e;
-}
-
 .contact button{
-width:100%;
 padding:20px;
-background:#22c55e;
+border-radius:14px;
 border:none;
-border-radius:12px;
+background:#22c55e;
+color:#0f172a;
 font-weight:700;
+font-size:16px;
 cursor:pointer;
-transition:.3s;
+transition:0.3s;
 }
 
-.contact button:hover{background:#16a34a;}
-
-.success-message{
-display:none;
-margin-top:30px;
-padding:20px;
+.contact button:hover{
 background:#16a34a;
-border-radius:12px;
-font-weight:600;
 }
 
 /* FOOTER */
 footer{
-padding:60px;
 text-align:center;
+padding:60px;
 background:#0f172a;
 }
 
+/* ANIMATION */
 @keyframes fadeUp{
 from{opacity:0;transform:translateY(40px);}
 to{opacity:1;transform:translateY(0);}
 }
 
 @media(max-width:900px){
+.split{grid-template-columns:1fr;}
 .hero h1{font-size:42px;}
 }
 </style>
@@ -215,6 +231,8 @@ to{opacity:1;transform:translateY(0);}
 <div class="nav-container">
 <div class="logo">RD Systems</div>
 <nav>
+<a href="#about">Überblick</a>
+<a href="#services">Leistungen</a>
 <a href="#contact">Kontakt</a>
 </nav>
 </div>
@@ -223,11 +241,44 @@ to{opacity:1;transform:translateY(0);}
 <section class="hero">
 <div class="hero-content">
 <h1>Digitale Struktur mit Wirkung</h1>
-<p>Websites, die verkaufen – nicht nur gut aussehen.</p>
+<p>Premium-Websites für regionale Unternehmen – strategisch, klar, modern.</p>
+<a href="#contact" class="cta-button">Projekt starten</a>
+</div>
+</section>
 
-<div class="hero-buttons">
-<a href="#contact" class="btn-primary">Projekt starten</a>
-<a href="#contact" class="btn-secondary">Kostenlose Analyse</a>
+<section id="about" class="section">
+<div class="container split">
+<div>
+<h2>Präzision statt Baukasten</h2>
+<p>
+Ihre Website ist kein Aushängeschild.
+Sie ist ein System zur Kundengewinnung.
+Struktur, Hierarchie und technische Stabilität entscheiden über Wirkung.
+</p>
+</div>
+<img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80">
+</div>
+</section>
+
+<section id="services" class="section services">
+<div class="container">
+<h2>Leistungen</h2>
+
+<div class="cards">
+<div class="card">
+<h3>Premium Webdesign</h3>
+<p>Design mit Tiefe, visueller Hierarchie und klarer Nutzerführung.</p>
+</div>
+
+<div class="card">
+<h3>Technische Umsetzung</h3>
+<p>Performance-Optimierung, saubere Struktur und Skalierbarkeit.</p>
+</div>
+
+<div class="card">
+<h3>Conversion-Optimierung</h3>
+<p>Besucher werden geführt – nicht verwirrt.</p>
+</div>
 </div>
 </div>
 </section>
@@ -236,28 +287,12 @@ to{opacity:1;transform:translateY(0);}
 <div class="container">
 <h2>Kontakt</h2>
 
-<form id="contactForm">
-<div class="form-group">
-<input type="text" name="name" placeholder=" " required>
-<label>Name</label>
-</div>
-
-<div class="form-group">
-<input type="email" name="email" placeholder=" " required>
-<label>E-Mail</label>
-</div>
-
-<div class="form-group">
-<textarea name="message" rows="5" placeholder=" " required></textarea>
-<label>Nachricht</label>
-</div>
-
+<form action="https://formspree.io/f/xzdanbzj" method="POST">
+<input type="text" name="name" placeholder="Name" required>
+<input type="email" name="email" placeholder="E-Mail" required>
+<textarea name="message" rows="6" placeholder="Nachricht" required></textarea>
 <button type="submit">Anfrage senden</button>
 </form>
-
-<div class="success-message" id="successMessage">
-Danke. Ihre Anfrage wurde erfolgreich übermittelt.
-</div>
 
 </div>
 </section>
@@ -265,28 +300,6 @@ Danke. Ihre Anfrage wurde erfolgreich übermittelt.
 <footer>
 © 2026 RD Systems
 </footer>
-
-<script>
-const form = document.getElementById("contactForm");
-const successMessage = document.getElementById("successMessage");
-
-form.addEventListener("submit", async function(e){
-e.preventDefault();
-
-const data = new FormData(form);
-
-const response = await fetch("https://formspree.io/f/xzdanbzj", {
-method: "POST",
-body: data,
-headers: { 'Accept': 'application/json' }
-});
-
-if(response.ok){
-form.reset();
-successMessage.style.display = "block";
-}
-});
-</script>
 
 </body>
 </html>
