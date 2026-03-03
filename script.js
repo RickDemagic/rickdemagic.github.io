@@ -1,16 +1,10 @@
-const reveals = document.querySelectorAll(".reveal");
+// Smooth scroll animation highlight
 
-function revealOnScroll() {
-    const windowHeight = window.innerHeight;
-
-    reveals.forEach(reveal => {
-        const revealTop = reveal.getBoundingClientRect().top;
-
-        if (revealTop < windowHeight - 100) {
-            reveal.classList.add("active");
-        }
-    });
-}
-
-window.addEventListener("scroll", revealOnScroll);
-revealOnScroll();
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+anchor.addEventListener('click',function(e){
+e.preventDefault();
+document.querySelector(this.getAttribute('href')).scrollIntoView({
+behavior:'smooth'
+});
+});
+});
