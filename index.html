@@ -3,9 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RD Systems</title>
+<title>RD Systems – Moderne Websites</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="style.css">
 </head>
 
@@ -16,13 +18,16 @@
     <div class="logo">RD Systems</div>
     <div class="nav-links">
       <a href="#leistungen">Leistungen</a>
+      <a href="#ueber">Über uns</a>
       <a href="#kontakt">Kontakt</a>
     </div>
   </div>
 </nav>
 
 <section class="hero">
+  <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
+
   <div class="hero-content">
     <h1>Moderne Websites für regionale Unternehmen</h1>
     <p>Struktur. Klarheit. Technische Präzision. Sichtbares Wachstum.</p>
@@ -33,25 +38,30 @@
 <section id="leistungen" class="section">
   <div class="container">
     <h2>Leistungen</h2>
-
     <div class="services">
-
       <div class="card">
         <h3>Webdesign</h3>
-        <p>Modernes Design mit klarer Nutzerführung und professioneller Wirkung.</p>
+        <p>Moderne, visuell starke Websites mit klarer Struktur.</p>
       </div>
-
       <div class="card">
-        <h3>Struktur & Strategie</h3>
-        <p>Logischer Seitenaufbau statt Chaos. Conversion-orientiert.</p>
+        <h3>Technik</h3>
+        <p>Saubere Code-Architektur und schnelle Performance.</p>
       </div>
-
       <div class="card">
-        <h3>Technische Umsetzung</h3>
-        <p>Schnelle, stabile und wartbare Lösungen ohne unnötige Systeme.</p>
+        <h3>Wachstum</h3>
+        <p>Optimiert für regionale Sichtbarkeit und Conversion.</p>
       </div>
-
     </div>
+  </div>
+</section>
+
+<section id="ueber" class="section">
+  <div class="container">
+    <h2>Über uns</h2>
+    <p class="center-text">
+      RD Systems steht für Klarheit, Struktur und saubere technische Umsetzung.
+      Keine Spielereien. Keine Marketing-Floskeln. Nur Ergebnisse.
+    </p>
   </div>
 </section>
 
@@ -60,17 +70,14 @@
     <h2>Kontakt</h2>
 
     <form class="contact-form"
-          action="https://formspree.io/f/mzdal1wg"
-          method="POST">
+      action="https://formspree.io/f/mzdal1wg"
+      method="POST">
 
-      <input type="hidden" name="_subject" value="Neue Anfrage über RD Systems">
-      <input type="hidden" name="_captcha" value="false">
-
-      <input type="text" name="name" placeholder="Name" required>
-      <input type="email" name="email" placeholder="E-Mail" required>
-      <textarea name="message" rows="6" placeholder="Nachricht" required></textarea>
-
+      <input type="text" name="name" placeholder="Ihr Name" required>
+      <input type="email" name="email" placeholder="Ihre E-Mail" required>
+      <textarea name="message" rows="6" placeholder="Ihre Nachricht" required></textarea>
       <button type="submit">Nachricht senden</button>
+
     </form>
 
   </div>
