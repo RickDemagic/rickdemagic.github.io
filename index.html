@@ -6,81 +6,205 @@
 <title>RD Systems</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#f4f7f6;
+color:#1f2937;
+line-height:1.6;
+}
+
+/* NAV */
+nav{
+position:fixed;
+width:100%;
+background:rgba(255,255,255,0.85);
+backdrop-filter:blur(10px);
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+z-index:1000;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);
+}
+
+nav a{
+text-decoration:none;
+margin-left:25px;
+color:#1f2937;
+font-weight:500;
+}
+
+/* HERO */
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+background:
+linear-gradient(rgba(0,70,40,0.6),rgba(0,0,0,0.6)),
+url('https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=1600&q=80');
+background-size:cover;
+background-position:center;
+padding:20px;
+}
+
+.hero h1{
+font-size:52px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:22px;
+}
+
+/* SECTION */
+.section{
+padding:120px 8%;
+}
+
+.light{
+background:white;
+}
+
+.dark{
+background:
+linear-gradient(rgba(0,60,40,0.9),rgba(0,0,0,0.85)),
+url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1600&q=80');
+background-size:cover;
+background-position:center;
+color:white;
+}
+
+/* CARDS */
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+margin-top:40px;
+}
+
+.card{
+background:#ffffff;
+padding:35px;
+border-radius:18px;
+box-shadow:0 20px 60px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+/* CONTACT */
+.contact-wrapper{
+max-width:700px;
+margin:auto;
+text-align:center;
+}
+
+.contact-wrapper h2{
+margin-bottom:20px;
+}
+
+form{
+display:flex;
+flex-direction:column;
+gap:15px;
+margin-top:40px;
+}
+
+input,textarea{
+padding:15px;
+border:none;
+border-radius:8px;
+font-size:16px;
+}
+
+button{
+padding:15px;
+border:none;
+border-radius:8px;
+background:#16a34a;
+color:white;
+font-weight:600;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#15803d;
+}
+
+footer{
+text-align:center;
+padding:50px;
+background:#1f2937;
+color:white;
+}
+</style>
 </head>
 
 <body>
 
-<nav class="navbar">
-    <div class="logo">RD Systems</div>
-    <div class="nav-links">
-        <a href="#leistungen">Leistungen</a>
-        <a href="#kontakt">Kontakt</a>
-    </div>
+<nav>
+<div><strong>RD Systems</strong></div>
+<div>
+<a href="#leistungen">Leistungen</a>
+<a href="#kontakt">Kontakt</a>
+</div>
 </nav>
 
-<header class="hero">
-    <div class="hero-content">
-        <h1>Digitale Stärke für regionale Unternehmen</h1>
-        <p>Moderne Websites mit Struktur, Klarheit und regionaler Identität.</p>
-        <a href="#kontakt" class="btn">Kontakt aufnehmen</a>
-    </div>
-</header>
-
-<section class="section reveal">
-    <div class="container split">
-        <div>
-            <h2>Regionale Identität trifft moderne Technik</h2>
-            <p>
-                Viele Betriebe arbeiten hervorragend – doch online fehlt oft Struktur.
-                Ich verbinde regionale Werte mit moderner digitaler Umsetzung.
-            </p>
-        </div>
-        <div>
-            <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1200&q=80">
-        </div>
-    </div>
+<section class="hero">
+<div>
+<h1>Digitale Stärke für regionale Unternehmen</h1>
+<p>Struktur. Klarheit. Sichtbares Wachstum.</p>
+</div>
 </section>
 
-<section id="leistungen" class="section reveal light">
-    <div class="container">
-        <h2>Leistungen</h2>
+<section id="leistungen" class="section light">
+<h2 style="text-align:center;">Leistungen</h2>
 
-        <div class="cards">
-            <div class="card">
-                <h3>Webdesign</h3>
-                <p>Klare, moderne Websites mit starker Nutzerführung.</p>
-            </div>
+<div class="cards">
+<div class="card">
+<h3>Webdesign</h3>
+<p>Moderne, strukturierte Websites mit regionalem Bezug.</p>
+</div>
 
-            <div class="card">
-                <h3>Technische Umsetzung</h3>
-                <p>Schnelle Ladezeiten, mobile Optimierung und saubere Struktur.</p>
-            </div>
+<div class="card">
+<h3>Technische Umsetzung</h3>
+<p>Sauberer Code, schnelle Ladezeiten und mobile Optimierung.</p>
+</div>
 
-            <div class="card">
-                <h3>Analyse & Optimierung</h3>
-                <p>Strukturelle Schwächen erkennen und gezielt verbessern.</p>
-            </div>
-        </div>
-    </div>
+<div class="card">
+<h3>Strukturanalyse</h3>
+<p>Klare Nutzerführung statt Chaos – mit Fokus auf Ergebnisse.</p>
+</div>
+</div>
 </section>
 
-<section id="kontakt" class="section contact reveal">
-    <div class="container">
-        <h2>Kontakt</h2>
-        <form action="https://formspree.io/f/mzdal1wg" method="POST">
-            <input type="text" name="name" placeholder="Name" required>
-            <input type="email" name="email" placeholder="E-Mail" required>
-            <textarea name="message" rows="6" placeholder="Nachricht" required></textarea>
-            <button type="submit">Nachricht senden</button>
-        </form>
-    </div>
+<section id="kontakt" class="section dark">
+<div class="contact-wrapper">
+<h2>Kontakt aufnehmen</h2>
+<p>Sie möchten Ihre Website modernisieren oder neu strukturieren?</p>
+
+<form action="https://formspree.io/f/mzdal1wg" method="POST">
+<input type="text" name="name" placeholder="Name" required>
+<input type="email" name="email" placeholder="E-Mail" required>
+<textarea name="message" rows="6" placeholder="Nachricht" required></textarea>
+<button type="submit">Nachricht senden</button>
+</form>
+
+</div>
 </section>
 
 <footer>
-    © 2026 RD Systems
+© 2026 RD Systems
 </footer>
 
-<script src="script.js"></script>
 </body>
 </html>
