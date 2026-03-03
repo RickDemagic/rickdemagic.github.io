@@ -8,27 +8,41 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
 body{
 font-family:'Poppins',sans-serif;
 background:#f4f7fb;
 color:#1e293b;
-line-height:1.6;
+line-height:1.7;
+scroll-behavior:smooth;
 }
 
 .container{
 width:90%;
-max-width:1100px;
+max-width:1200px;
 margin:auto;
 }
 
 nav{
+position:fixed;
+width:100%;
+top:0;
+left:0;
 background:white;
 padding:20px 0;
-box-shadow:0 4px 12px rgba(0,0,0,0.05);
-position:sticky;
-top:0;
+box-shadow:0 4px 15px rgba(0,0,0,0.05);
+z-index:1000;
+transition:0.3s;
+}
+
+nav.scrolled{
+padding:12px 0;
+box-shadow:0 6px 20px rgba(0,0,0,0.08);
 }
 
 nav .container{
@@ -40,72 +54,116 @@ align-items:center;
 nav a{
 text-decoration:none;
 color:#1e293b;
-margin-left:25px;
+margin-left:30px;
+font-weight:500;
+transition:0.2s;
+}
+
+nav a:hover{
+color:#2563eb;
 }
 
 .hero{
-padding:100px 0;
+padding:160px 0 120px 0;
 text-align:center;
+background:linear-gradient(135deg,#e0f2fe,#f8fafc);
 }
 
 .hero h1{
-font-size:40px;
+font-size:48px;
 margin-bottom:20px;
+font-weight:700;
+}
+
+.hero p{
+font-size:20px;
+color:#475569;
 }
 
 .section{
-padding:80px 0;
+padding:120px 0;
 }
 
 .section h2{
 text-align:center;
-margin-bottom:40px;
+font-size:36px;
+margin-bottom:60px;
 }
 
 .services{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:40px;
 }
 
 .card{
 background:white;
-padding:30px;
-border-radius:12px;
-box-shadow:0 10px 25px rgba(0,0,0,0.05);
+padding:35px;
+border-radius:16px;
+box-shadow:0 15px 35px rgba(0,0,0,0.06);
+transform:translateY(40px);
+opacity:0;
+transition:0.8s ease;
+}
+
+.card.visible{
+transform:translateY(0);
+opacity:1;
 }
 
 .card img{
 width:100%;
-border-radius:8px;
-margin-bottom:15px;
+height:200px;
+object-fit:cover;
+border-radius:12px;
+margin-bottom:20px;
 }
 
-.contact-form{
-max-width:600px;
+.card h3{
+margin-bottom:15px;
+font-size:22px;
+}
+
+.about{
+max-width:800px;
+margin:auto;
+text-align:center;
+font-size:18px;
+color:#475569;
+}
+
+.contact-box{
+background:white;
+padding:50px;
+border-radius:20px;
+box-shadow:0 20px 40px rgba(0,0,0,0.07);
+max-width:700px;
 margin:auto;
 }
 
-.contact-form input,
-.contact-form textarea{
+.contact-box input,
+.contact-box textarea{
 width:100%;
-padding:15px;
-margin-bottom:15px;
+padding:16px;
+margin-bottom:18px;
 border:1px solid #cbd5e1;
-border-radius:8px;
+border-radius:10px;
+font-size:15px;
 }
 
-.contact-form button{
+.contact-box button{
 width:100%;
-padding:15px;
-border:none;
+padding:16px;
 background:#2563eb;
+border:none;
 color:white;
-border-radius:8px;
+font-size:16px;
+border-radius:10px;
 cursor:pointer;
+transition:0.2s;
 }
 
-.contact-form button:hover{
+.contact-box button:hover{
 background:#1d4ed8;
 }
 
@@ -113,19 +171,20 @@ footer{
 background:#1e293b;
 color:white;
 text-align:center;
-padding:30px 0;
-margin-top:60px;
+padding:40px 0;
+margin-top:120px;
 }
 </style>
 </head>
 
 <body>
 
-<nav>
+<nav id="navbar">
 <div class="container">
 <strong>RD Systems</strong>
 <div>
 <a href="#leistungen">Leistungen</a>
+<a href="#about">Über uns</a>
 <a href="#kontakt">Kontakt</a>
 </div>
 </div>
@@ -134,7 +193,7 @@ margin-top:60px;
 <section class="hero">
 <div class="container">
 <h1>Moderne Websites für regionale Unternehmen</h1>
-<p>Saubere Struktur. Klare Kommunikation.</p>
+<p>Struktur. Klarheit. Technische Präzision.</p>
 </div>
 </section>
 
@@ -147,21 +206,30 @@ margin-top:60px;
 <div class="card">
 <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7">
 <h3>Webdesign</h3>
-<p>Klar, hell und modern.</p>
+<p>Helles, modernes Design mit klarer Nutzerführung.</p>
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d">
-<h3>Struktur</h3>
-<p>Logischer Aufbau statt Chaos.</p>
+<h3>Struktur & Strategie</h3>
+<p>Saubere Seitenarchitektur statt visuellem Chaos.</p>
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085">
-<h3>Technik</h3>
-<p>Stabil, schnell und wartbar.</p>
+<h3>Technische Umsetzung</h3>
+<p>Stabile, schnelle und wartbare Lösungen.</p>
 </div>
 
+</div>
+</div>
+</section>
+
+<section id="about" class="section">
+<div class="container">
+<h2>Über uns</h2>
+<div class="about">
+<p>RD Systems steht für wirtschaftlich strukturierte Websites mit Fokus auf Klarheit, Nutzerführung und nachhaltige technische Umsetzung. Keine Spielereien. Keine Marketing-Floskeln. Nur funktionierende Systeme.</p>
 </div>
 </div>
 </section>
@@ -170,11 +238,11 @@ margin-top:60px;
 <div class="container">
 <h2>Kontakt</h2>
 
-<div class="contact-form">
+<div class="contact-box">
 
 <form action="https://formspree.io/f/mzdal1wg" method="POST">
 
-<input type="hidden" name="_subject" value="Neue Kontaktanfrage von RD Systems">
+<input type="hidden" name="_subject" value="Neue Anfrage RD Systems">
 <input type="hidden" name="_captcha" value="false">
 
 <input type="text" name="name" placeholder="Name" required>
@@ -190,8 +258,32 @@ margin-top:60px;
 </section>
 
 <footer>
-© 2026 RD Systems
+© 2026 RD Systems – Alle Rechte vorbehalten
 </footer>
+
+<script>
+const navbar = document.getElementById("navbar");
+window.addEventListener("scroll",()=>{
+if(window.scrollY>50){
+navbar.classList.add("scrolled");
+}else{
+navbar.classList.remove("scrolled");
+}
+});
+
+const cards=document.querySelectorAll(".card");
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("visible");
+}
+});
+},{threshold:0.2});
+
+cards.forEach(card=>{
+observer.observe(card);
+});
+</script>
 
 </body>
 </html>
