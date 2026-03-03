@@ -5,283 +5,254 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RD Systems</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
+* {margin:0;padding:0;box-sizing:border-box;}
 
-body{
-font-family:'Poppins',sans-serif;
-background:#0f172a;
-color:white;
-overflow-x:hidden;
+body {
+font-family:'Inter',sans-serif;
+color:#1e293b;
+background:#ffffff;
+line-height:1.6;
 }
 
-/* NAV */
+.container {
+max-width:1100px;
+margin:0 auto;
+padding:0 20px;
+}
 
-nav{
-position:fixed;
-width:100%;
+.nav {
+background:#ffffff;
+border-bottom:1px solid #e2e8f0;
+position:sticky;
 top:0;
-padding:20px 5%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-background:rgba(15,23,42,0.8);
-backdrop-filter:blur(10px);
 z-index:1000;
 }
 
-nav a{
-color:white;
-text-decoration:none;
-margin-left:25px;
-font-weight:500;
-transition:0.3s;
-}
-
-nav a:hover{
-color:#38bdf8;
-}
-
-/* HERO */
-
-.hero{
-position:relative;
-height:100vh;
+.nav-inner {
 display:flex;
+justify-content:space-between;
 align-items:center;
-justify-content:center;
+height:70px;
+}
+
+.logo {font-weight:800;font-size:20px;}
+
+.nav-links a {
+margin-left:30px;
+text-decoration:none;
+color:#334155;
+font-weight:500;
+}
+
+.hero {
+position:relative;
+padding:160px 20px;
 text-align:center;
-overflow:hidden;
+color:white;
+background:url("https://images.unsplash.com/photo-1492724441997-5dc865305da7") center/cover no-repeat;
 }
 
-/* Animated Gradient Background */
-
-.hero::before{
+.hero::before {
 content:"";
-position:absolute;
-width:200%;
-height:200%;
-background:linear-gradient(
-45deg,
-#0ea5e9,
-#22c55e,
-#3b82f6,
-#14b8a6,
-#0ea5e9
-);
-background-size:400% 400%;
-animation:gradientMove 12s ease infinite;
-z-index:0;
-}
-
-@keyframes gradientMove{
-0%{background-position:0% 50%;}
-50%{background-position:100% 50%;}
-100%{background-position:0% 50%;}
-}
-
-.hero-overlay{
 position:absolute;
 inset:0;
 background:rgba(0,0,0,0.6);
-z-index:1;
 }
 
-.hero-content{
+.hero .container {
 position:relative;
 z-index:2;
-max-width:800px;
-padding:20px;
-opacity:0;
-transform:translateY(40px);
-transition:1.2s ease;
 }
 
-.hero-content.active{
-opacity:1;
-transform:translateY(0);
+.hero h1 {
+font-size:clamp(32px,4vw,48px);
+margin-bottom:20px;
 }
 
-.hero h1{
-font-size:52px;
-font-weight:800;
-margin-bottom:25px;
+.hero p {
+font-size:18px;
+margin-bottom:30px;
+opacity:0.9;
 }
 
-.hero p{
-font-size:20px;
-margin-bottom:35px;
-}
-
-.cta{
+.btn-primary {
 display:inline-block;
-padding:15px 35px;
-background:#38bdf8;
-border-radius:8px;
+padding:14px 28px;
+background:#2563eb;
 color:white;
 text-decoration:none;
+border-radius:6px;
 font-weight:600;
-transition:0.3s;
 }
 
-.cta:hover{
-background:#0284c7;
-transform:translateY(-3px);
+.section {
+padding:100px 0;
 }
 
-/* SECTION */
-
-.section{
-padding:120px 5%;
-background:#111827;
+.section.light {
+background:#f1f5f9;
 }
 
-.section:nth-child(even){
-background:#1f2937;
-}
-
-.section h2{
+.section h2 {
 text-align:center;
 margin-bottom:60px;
 font-size:32px;
 }
 
-.cards{
+.grid {
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:40px;
 }
 
-.card{
-background:#0f172a;
-padding:35px;
-border-radius:12px;
-opacity:0;
-transform:translateY(40px);
-transition:0.8s ease;
+.card {
+background:white;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 15px 40px rgba(0,0,0,0.08);
 }
 
-.card.visible{
-opacity:1;
-transform:translateY(0);
-}
-
-/* CONTACT */
-
-form{
-max-width:600px;
-margin:auto;
-}
-
-input,textarea{
+.card img {
 width:100%;
-padding:15px;
+height:200px;
+object-fit:cover;
+}
+
+.card-content {
+padding:25px;
+}
+
+.card-content h3 {
 margin-bottom:15px;
-border:none;
-border-radius:8px;
-font-size:15px;
 }
 
-button{
-width:100%;
-padding:15px;
-border:none;
-border-radius:8px;
-background:#22c55e;
+.image-section {
+position:relative;
+height:400px;
+background:url("https://images.unsplash.com/photo-1556761175-b413da4baf72") center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
 color:white;
-font-size:16px;
-cursor:pointer;
-transition:0.3s;
-}
-
-button:hover{
-background:#16a34a;
-}
-
-footer{
 text-align:center;
-padding:40px 0;
+}
+
+.image-section::before {
+content:"";
+position:absolute;
+inset:0;
+background:rgba(0,0,0,0.5);
+}
+
+.image-section h2 {
+position:relative;
+z-index:2;
+font-size:36px;
+}
+
+.benefits {
+max-width:600px;
+margin:0 auto;
+list-style:none;
+}
+
+.benefits li {
+margin-bottom:15px;
+padding-left:20px;
+position:relative;
+}
+
+.benefits li::before {
+content:"•";
+position:absolute;
+left:0;
+color:#2563eb;
+font-weight:bold;
+}
+
+.footer {
 background:#0f172a;
+color:white;
+padding:40px 0;
+text-align:center;
+margin-top:60px;
 }
 </style>
-</head>
 
+</head>
 <body>
 
-<nav>
-<div>RD Systems</div>
-<div>
+<nav class="nav">
+<div class="container nav-inner">
+<div class="logo">RD Systems</div>
+<div class="nav-links">
 <a href="#leistungen">Leistungen</a>
 <a href="#kontakt">Kontakt</a>
 </div>
+</div>
 </nav>
 
-<section class="hero">
-<div class="hero-overlay"></div>
-<div class="hero-content">
-<h1>Moderne Websites für regionale Unternehmen</h1>
-<p>Struktur. Klarheit. Technische Präzision. Sichtbares Wachstum.</p>
-<a href="#kontakt" class="cta">Projekt starten</a>
+<header class="hero">
+<div class="container">
+<h1>Wirtschaftlich strukturierte Websites für regionale Unternehmen</h1>
+<p>Klarheit. Nutzerführung. Messbare Anfragen.</p>
+<a href="#kontakt" class="btn-primary">Projekt anfragen</a>
 </div>
-</section>
+</header>
 
 <section id="leistungen" class="section">
+<div class="container">
 <h2>Leistungen</h2>
-<div class="cards">
+<div class="grid">
+
 <div class="card">
-<h3>Webdesign</h3>
-<p>Modernes, performantes Design mit klarer Struktur.</p>
+<img src="https://images.unsplash.com/photo-1551434678-e076c223a692">
+<div class="card-content">
+<h3>Analyse & Struktur</h3>
+<p>Klare Positionierung und saubere Seitenarchitektur.</p>
 </div>
-<div class="card">
-<h3>Technik</h3>
-<p>Sauberer Code, schnelle Ladezeiten, stabile Architektur.</p>
 </div>
+
 <div class="card">
-<h3>Wachstum</h3>
-<p>Optimiert für Sichtbarkeit und Conversion.</p>
+<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085">
+<div class="card-content">
+<h3>Modernes Design</h3>
+<p>Helle, vertrauensvolle Gestaltung ohne Spielerei.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f">
+<div class="card-content">
+<h3>Conversion-Fokus</h3>
+<p>Gezielte Handlungsführung für mehr Anfragen.</p>
+</div>
+</div>
+
 </div>
 </div>
 </section>
 
-<section id="kontakt" class="section">
+<section class="image-section">
+<h2>Struktur schlägt Spielerei</h2>
+</section>
+
+<section id="kontakt" class="section light">
+<div class="container">
 <h2>Kontakt</h2>
-<form action="https://formspree.io/f/mzdal1wg" method="POST">
-<input type="text" name="name" placeholder="Ihr Name" required>
-<input type="email" name="email" placeholder="Ihre E-Mail" required>
-<textarea name="message" rows="5" placeholder="Ihre Nachricht" required></textarea>
-<button type="submit">Nachricht senden</button>
-</form>
+<p>rd.system.framework@gmail.com</p>
+<p>+49 15565 071595</p>
+</div>
 </section>
 
-<footer>
+<footer class="footer">
+<div class="container">
 © 2026 RD Systems
+</div>
 </footer>
-
-<script>
-document.addEventListener("DOMContentLoaded",function(){
-
-// Hero Fade In
-setTimeout(()=>{
-document.querySelector(".hero-content").classList.add("active");
-},200);
-
-// Scroll Animation
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add("visible");
-}
-});
-},{threshold:0.2});
-
-document.querySelectorAll(".card").forEach(card=>{
-observer.observe(card);
-});
-
-});
-</script>
 
 </body>
 </html>
